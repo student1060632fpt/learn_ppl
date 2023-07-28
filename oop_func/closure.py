@@ -3,6 +3,7 @@ def power(y):
   def inner(x):
     print("inner: x = ",x)
     return x**y
+  print(inner)
   return inner
 square = power(2)
 

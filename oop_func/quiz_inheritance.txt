@@ -1,0 +1,30 @@
+// coi cái ni đi
+// https://www.jdoodle.com/compile-scala-online/
+
+class A{
+    def foo() = print("a nè")
+    def buu() = print("a lun")
+}
+class B extends A {override def foo() = print("b")}
+class C extends B {
+    override def foo() = print("c")
+    def blu() = print("c too")
+}
+object Main {
+  def main(args: Array[String]): Unit = {
+    // Step 1: Create objects of classes B and C
+    val bObject = new B()
+    val cObject = new C()
+
+    // Step 2: Assign an object of class B to the variable b
+    val b: B = bObject
+
+    // Step 3: Call the foo() method on the object referenced by the variable b
+    b.foo() // Output: "b"
+    b.buu()
+   // b.blu()
+
+    // Alternatively, you can call the foo() method on the cObject as well
+    //cObject.foo() // Output: "c"
+  }
+}
