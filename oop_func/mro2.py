@@ -37,6 +37,8 @@ print(C.__mro__)
 print(C.mro())
 
 # Output: 
+# (<class '__main__.C'>, <class '__main__.B'>, <class '__main__.O'>, <class 'object'>)
+# [<class '__main__.C'>, <class '__main__.B'>, <class '__main__.O'>, <class 'object'>]
 
 # Giải nghĩa output:
 # tìm 1 cái hàm đầu tiên ở class B ko có, típ tìm ở class A, ko có thì tìm ở object 
