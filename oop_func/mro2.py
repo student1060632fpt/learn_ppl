@@ -15,30 +15,30 @@ class O:
 		print(" In O")
 
 
-class A(M and X and O):
+class A(M, X, O):
 	def foo(self):
 		print(" In A")
 
-class B(N and M and O):
+class B(N, M, O):
 	def foo(self):
 		print(" In B")
 
 # classes ordering
-class C(A and B):
+class C(A, B):
 	def __init__(self):
 		print("Constructor C")
 
 
 aa = C()
-aa.foo()
+# aa.foo()
 
 # it prints the lookup order
 print(C.__mro__)
 print(C.mro())
 
 # Output: 
-# (<class '__main__.C'>, <class '__main__.B'>, <class '__main__.O'>, <class 'object'>)
-# [<class '__main__.C'>, <class '__main__.B'>, <class '__main__.O'>, <class 'object'>]
+# (C A B N M X O <class 'object'>)
+# [C A B N M X O <class 'object'>]
 
 # Giải nghĩa output:
 # tìm 1 cái hàm đầu tiên ở class B ko có, típ tìm ở class A, ko có thì tìm ở object 
